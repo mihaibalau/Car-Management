@@ -1,0 +1,45 @@
+@page
+@model DisplayCarsModel
+@{
+    ViewData["Title"] = "Cars App";
+}
+
+<div class="text-center">
+    <h1 class="title-style">Cars App</h1>
+    <h2 class="subtitle-style">Main Menu</Main></h2>
+</div>
+
+<div class="car-list">
+    @foreach (var car in Model.Cars)
+    {
+        <div class="car-card">
+            <div class="car-details">
+                <h3 class="car-brand">@car.CarBrand</h3>
+                <p class="car-model">Model: @car.Model</p>
+                <p class="car-info">Year: @car.ProductionYear | Engine: @car.Engine</p>
+            </div>
+            <div class="car-actions">
+                <form method="post" asp-page-handler="Modify" asp-route-id="@car.Id">
+                    <button type="submit" class="action-button modify-button">Modify</button>
+                </form>
+
+                <form method="post" asp-page-handler="Delete" asp-route-id="@car.Id" onsubmit="return confirm('Are you sure you want to delete this car?');">
+                    <button type="submit" class="action-button delete-button">Delete</button>
+                </form>
+
+            </div>
+        </div>
+    }
+</div>
+
+<div class="button-container">
+    <form method="get" asp-page="/AddCar">
+        <button type="submit" class="button add-car-button">Add new car</button>
+    </form>
+    <form method="post" asp-page-handler="Filter">
+    <button type="submit" class="button filter-button">Sort by year ascending</button>
+    </form>
+</div>
+
+
+
