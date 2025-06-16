@@ -2,7 +2,7 @@
 
 ## Description
 
-Car-Management is a comprehensive .NET Core MVC application designed for managing car-related information. This project demonstrates the implementation of a full-stack web application using modern .NET technologies and best practices.
+Car-Management is a comprehensive ASP.NET Core Web Application (Razor Pages) designed for managing car-related information. This project demonstrates the implementation of a full-stack web application using modern .NET technologies and best practices.
 
 ## Key Features
 
